@@ -32,7 +32,7 @@ fn handle_connection(mut stream: TcpStream) {
         thread::sleep(Duration::from_secs(5));
         ("HTTP/1.1 200 OK\r\n\r\n", "hello.html")
     } else {
-        ("HTTP/1.1 404 NOT FOUND\r\n\r\n", "kek.html")
+        ("HTTP/1.1 404 NOT FOUND\r\n\r\n", "404.html")
     };
     let contents = fs::read_to_string(filename).unwrap();
     let response = format!("{}{}", status_line, contents);
